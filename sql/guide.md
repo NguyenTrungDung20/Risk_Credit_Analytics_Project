@@ -1,0 +1,106 @@
+-- ============================================================
+-- 7. POWER BI MODEL GUIDANCE
+-- ============================================================
+--
+-- IMPORT INTO POWER BI
+--
+-- 1. vw_credit_risk_detail
+--    Main Fact View.
+--
+-- 2. vw_geography
+--    Geography dimension.
+--
+-- 3. vw_segment_candidates
+--    Overlapping candidate-segment membership table.
+--
+-- 4. vw_powerbi_qa
+--    QA only. Keep hidden or do not load into report visuals.
+--
+--
+-- RELATIONSHIPS
+--
+-- vw_geography[pbi_geo_key]
+--      1  ->  *
+-- vw_credit_risk_detail[pbi_geo_key]
+--
+-- vw_credit_risk_detail[client_ID]
+--      1  ->  *
+-- vw_segment_candidates[client_ID]
+--
+-- Keep relationship filter direction SINGLE.
+--
+--
+-- SORT-BY-COLUMN SETTINGS IN POWER BI
+--
+-- pbi_age_band
+--   sort by pbi_age_band_sort
+--
+-- pbi_income_band
+--   sort by pbi_income_band_sort
+--
+-- pbi_income_group_3
+--   sort by pbi_income_group_3_sort
+--
+-- pbi_employment_length_band
+--   sort by pbi_employment_length_band_sort
+--
+-- loan_grade
+--   sort by pbi_loan_grade_sort
+--
+-- pbi_loan_amount_band
+--   sort by pbi_loan_amount_band_sort
+--
+-- pbi_interest_rate_band
+--   sort by pbi_interest_rate_band_sort
+--
+-- pbi_lti_band
+--   sort by pbi_lti_band_sort
+--
+-- pbi_dti_band
+--   sort by pbi_dti_band_sort
+--
+-- pbi_affordability_group
+--   sort by pbi_affordability_group_sort
+--
+-- pbi_credit_history_band
+--   sort by pbi_credit_history_band_sort
+--
+-- pbi_utilization_band
+--   sort by pbi_utilization_band_sort
+--
+--
+-- CORE DAX MEASURES TO CREATE AFTER IMPORT
+--
+-- Total Loans
+-- Default Loans
+-- Non-default Loans
+-- Default Rate
+-- Loan Exposure
+-- Default Exposure
+-- Default Exposure Rate
+-- Average Loan Amount
+-- Average Interest Rate
+--
+-- SEGMENT-TABLE DAX
+--
+-- Segment Loans
+-- Segment Default Loans
+-- Segment Default Rate
+-- Segment Loan Exposure
+-- Segment Default Exposure
+-- Segment Portfolio Share
+-- Segment Default Exposure Share
+--
+--
+-- DO NOT CREATE IN SQL
+--
+-- Dynamic KPI totals
+-- Dynamic portfolio shares under slicers
+-- Dynamic rankings under report filters
+-- Visual titles
+-- Tooltip text
+-- Final lending approval/rejection rules
+--
+-- ============================================================
+-- END OF 10_POWERBI_VIEWS.SQL
+-- ============================================================
