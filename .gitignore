@@ -23,6 +23,7 @@ data/processed/*
 # Power BI binaries can embed data model rows, credentials, and local metadata
 powerbi/*.pbix
 powerbi/*.pbit
+!powerbi/Risk_Credit_Analytics_Project.pbix
 
 # Temporary PBIX extraction folders
 .tmp_pbix*/
